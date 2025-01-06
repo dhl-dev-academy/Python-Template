@@ -1,11 +1,7 @@
 {
   "name": "My Project Codespace",
   "image": "mcr.microsoft.com/devcontainers/python:latest",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "rootless"
-    }
-  },
+  "features": {},
   "customizations": {
     "vscode": {
       "extensions": [
