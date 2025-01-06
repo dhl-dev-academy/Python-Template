@@ -1,11 +1,9 @@
 # Dockerfile
-FROM mcr.microsoft.com/devcontainers/python:3.10
+FROM mcr.microsoft.com/devcontainers/python:latest
 
-# Install additional tools
-RUN apt-get update && apt-get install -y \
-    git \
-    curl
+# Install Docker CLI
+RUN apt-get update && apt-get install -y docker.io docker-compose
 
-# Install Python packages
-COPY requirements.txt /tmp/pip-tmp/
-RUN pip install --no-cache-dir -r /tmp/pip-tmp/requirements.txt
+# Copy Python dependencies
+COPY requirements.txt /tmp/
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
